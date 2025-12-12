@@ -1,0 +1,33 @@
+---
+layout: page
+---
+
+<h2>{{ page.title }}</h2>
+
+<p>
+  {{ page.authors }}<br>
+  {% if page.venue %}
+    <em>{{ page.venue }}</em>,
+  {% endif %}
+  {{ page.year }}.
+</p>
+
+{% if page.doi %}
+  <p>DOI: <a href="https://doi.org/{{ page.doi }}" target="_blank">{{ page.doi }}</a></p>
+{% endif %}
+
+<p>
+  {% if page.pdf %}
+    <a href="{{ page.pdf | relative_url }}" target="_blank">[PDF]</a>
+  {% endif %}
+  {% if page.url_external %}
+    <a href="{{ page.url_external }}" target="_blank">[Publisher Link]</a>
+  {% endif %}
+  {% if page.note %}
+    <span class="text-muted">({{ page.note }})</span>
+  {% endif %}
+</p>
+
+<hr>
+
+{{ content }}

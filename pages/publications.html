@@ -1,0 +1,39 @@
+---
+layout: page
+title: Publications
+permalink: /publications/
+weight: 5
+---
+
+<h2 class="mb-4">Publications</h2>
+
+{% assign pubs = site.publications | sort: "year" | reverse %}
+{% assign pubs_by_year = pubs | group_by: "year" %}
+
+{% for year_group in pubs_by_year %}
+  <h3 class="mt-4">{{ year_group.name }}</h3>
+  <ol class="pl-3">
+    {% for pub in year_group.items %}
+      <li class="mb-2">
+        {{ pub.authors }}.
+        “<a href="{{ pub.url | relative_url }}">{{ pub.title }}</a>.”
+        {% if pub.venue %}
+          <em>{{ pub.venue }}</em>,
+        {% endif %}
+        {{ pub.year }}.
+        {% if pub.doi %}
+          <a href="https://doi.org/{{ pub.doi }}" target="_blank">doi:{{ pub.doi }}</a>.
+        {% endif %}
+        {% if pub.pdf %}
+          <a href="{{ pub.pdf | relative_url }}" target="_blank">[PDF]</a>
+        {% endif %}
+        {% if pub.url_external %}
+          <a href="{{ pub.url_external }}" target="_blank">[Link]</a>
+        {% endif %}
+        {% if pub.note %}
+          <span class="text-muted">({{ pub.note }})</span>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ol>
+{% endfor %}
