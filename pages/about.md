@@ -20,7 +20,7 @@ I like breaking things up and then trying to build them back together. Hence, I 
 
 Beyond technical skills, trekking in remote areas has taught me to navigate unknown terrain, a skill that prepared me for threat hunting in a SIEM environment. Similarly, my approach to enhance governance and compliance by integrating multiple cybersecurity frameworks is a reflection of my cooking skills, where flavour is the result of many spices coming together in the perfect balance. These hobbies keep me grounded and remind me that diverse perspectives produce diverse ideas.
 
-The best way to connect with me is by shooting me an <a href="mailto:hello@mkashif.me">email</a>. My public key is <a target="_blank" href="https://keybase.io/">3E0F </a>. Do it without thinking twice. I love socializing.
+The best way to connect with me is by shooting me an <a href="mailto:md.kashif8858@gmail.com">email</a>. My public key is <a target="_blank" href="https://keybase.io/">3E0F </a>. Do it without thinking twice. I love socializing.
 
 
 <!-- 
