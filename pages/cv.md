@@ -15,4 +15,4 @@ weight: 2
   </a>
 </p>
 
-<embed src="/assets/files/Kashif_CV.pdf" width="100%" height="800px" type="application/pdf">
+<embed src="/assets/Kashif_CV.pdf" width="100%" height="800px" type="application/pdf">
