@@ -5,13 +5,14 @@ permalink: /cv/
 weight: 2
 ---
 
-<div class="text-center my-5">
-  <h2>Curriculum Vitae</h2>
-  <p class="text-muted">Download my latest CV</p>
+<h2>Curriculum Vitae</h2>
 
-  <a href="/assets/Kashif_CV.pdf"
-     class="btn btn-primary btn-lg"
-     target="_blank">
-    <i class="fas fa-file-pdf"></i> Download CV (PDF)
+<p>You can download my CV using the link below:</p>
+
+<p>
+  <a href="/assets/Kashif_CV.pdf" target="_blank" class="btn btn-primary">
+    Download CV (PDF)
   </a>
-</div>
+</p>
+
+<embed src="/assets/files/Kashif_CV.pdf" width="100%" height="800px" type="application/pdf">
