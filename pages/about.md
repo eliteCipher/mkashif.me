@@ -10,9 +10,6 @@ weight: 1
 
 <img src="{{ site.url }}/{{ site.author.image }}" width="10px" style="width: 300px;" class="circle-image wow animated jackInTheBox" data-wow-delay=".2s">
 
-<center>{% include elements/button.html link="https://drive.google.com/file/d/1FTTv7qYf3Od40fJuJOQKX15sGmjjN9m2/view?usp=sharing" text="Download Resume" size="sm" %}
-</center><br>
-
 Hi, :wave: <br><br>
 Thanks for stumbling upon my little space on the web. Currently, I have a Master's in Cybersecurity from University of Saarland and over four years of experience in the Security Operation Centre. I am passionate about Defensive security, Threat hunting, and startups. 
 
