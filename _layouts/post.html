@@ -35,8 +35,10 @@ layout: page
 <br>
 {% include share-buttons.html %}
 
-{% if page.comments %}
-<div class="disqus-comments">
-  {% include disqus.html %}
-</div>
+
+
+{% if page.comments != false %}
+  <hr>
+  <h3>Comments</h3>
+  {% include comments.html %}
 {% endif %}

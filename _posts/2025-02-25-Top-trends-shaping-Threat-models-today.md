@@ -5,6 +5,7 @@ style:
 color:
 image: "/assets/images/post_1_threatmodels/threatmodels.jpg"
 description: "Hunting for threats in logs is a time consuming task. Where to start threat detection?"
+comments: true
 permalink: Top-trends-shaping-Threat-models-today
 ---
 
