@@ -72,3 +72,4 @@ some-long-command > /home/mcskidy/output.txt
 {% highlight shell %}
 grep "secret" message.txt && echo "Secret found!"
 {% endhighlight %}
+
