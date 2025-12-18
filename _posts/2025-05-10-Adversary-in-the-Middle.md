@@ -64,7 +64,7 @@ Below are the key signals defenders should look for.
 
 ---
 
-## 🚩 Successful MFA with Abnormal Context
+### 1. 🚩 Successful MFA with Abnormal Context
 
 A successful MFA login should still be investigated if it comes with:
 - New IP address
@@ -73,22 +73,23 @@ A successful MFA login should still be investigated if it comes with:
 
 These often indicate **stolen session reuse**.
 
+<br>
 
-## 🚩 Impossible Travel
+### 2. 🚩 Impossible Travel
 
 One of the strongest AiTM indicators.
 
 Example pattern:
 
-User logs in from Germany
+- User logs in from Germany
 
-Minutes later, logs in from another continent
+- Minutes later, logs in from another continent
 
-Both logins show MFA = Success
+- Both logins show MFA = Success
 
-This strongly suggests session hijacking.
+- This strongly suggests session hijacking.
 
-### Example KQL
+#### Example KQL
 {% highlight shell %}
 
 SigninLogs
@@ -97,34 +98,39 @@ SigninLogs
 
 {% endhighlight %}
 
-## 🚩 Token Reuse from Unknown Devices
+<br>
+
+### 3. 🚩 Token Reuse from Unknown Devices
 
 Attackers replay stolen session cookies from:
 
-Different devices
+- Different devices
 
-Different OS
+- Different OS
 
-Headless browsers
+- Headless browsers
 
-The browser may look legitimate, but the device identity does not.
+- The browser may look legitimate, but the device identity does not.
+
 
 Look for:
 
-Unknown or missing device IDs
+- Unknown or missing device IDs
 
-New device immediately after MFA success
+- New device immediately after MFA success
 
-Browser + OS mismatch
+- Browser + OS mismatch
 
+<br>
 
-## 🚩 Suspicious OAuth Activity After Login
+### 🚩 Suspicious OAuth Activity After Login
 
 Registering malicious OAuth apps (like OfficeHome)
 
 Requesting high-privilege permissions
 
 
+---
 
 ## Why Defender XDR Correlation Matters
 
@@ -138,27 +144,30 @@ Requesting high-privilege permissions
 
 4. Follow-up activity (Defender XDR)
 
-Individually, these signals may look benign.
-Together, they tell the full story.
+*Individually, these signals may look benign.*
+*Together, they tell the full story.*
 
-## Blue Team Takeaway
+---
+
+## SOC Team Takeaway
 
 AiTM detection isn’t about failed logins.
 
 It’s about:
 
-Session behavior
+- Session behavior
 
-Device context
+- Device context
 
-Token usage
+- Token usage
 
-OAuth abuse
+- OAuth abuse
 
+<br>
 
 If your detection logic stops at:
 
-“MFA passed”
+*“MFA passed”*
 
 You’re already late.
 
@@ -167,16 +176,11 @@ You’re already late.
 
 MFA is essential — but no longer sufficient on its own.
 
-To defend against AiTM:
+*To defend against AiTM:*
 
-Use phishing-resistant MFA
+Use phishing-resistant MFA: 
 
-FIDO2 binds authentication to:
+{% include elements/figure.html image="/assets/images/fido.jpg" caption="FIDO2" %}
 
-The real domain
-
-The physical security key
-
-Session cookies cannot be replayed
-
-AiTM proxies (Evilginx, Modlishka) fail completely
+- FIDO2 binds authentication to the real domain and The physical security key
+- Session cookies cannot be replayed and AiTM proxies (Evilginx, Modlishka) fail completely
