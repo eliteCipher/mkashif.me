@@ -123,7 +123,7 @@ Look for:
 
 <br>
 
-### 🚩 Suspicious OAuth Activity After Login
+### 4. 🚩 Suspicious OAuth Activity After Login
 
 Registering malicious OAuth apps (like OfficeHome)
 
