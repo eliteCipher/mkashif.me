@@ -1,5 +1,5 @@
 ---
-title: "Advent of Cyber 2025 | Challenge: Splunk Basics – Did You SIEM?"
+title: "Advent of Cyber 2025 | Challenge 3: Splunk Basics – Did You SIEM?"
 tags: ["splunk", "siem", "log analysis", "soc"]
 style:
 color:
@@ -43,7 +43,7 @@ To see the spike in the **web traffic**, timechart command comes very handy:
 index=main sourcetype=web_traffic 
 | timechart span=1d count
 {% endhighlight %}
-The **timechart** command gives us the visibility into web traffic on a daily basis.
+This query gives us the visibility into web traffic on a daily basis.
 
 {% include elements/figure.html image="/assets/images/aoc3/timechart.png" caption='Timechart command' %}
 
@@ -55,7 +55,7 @@ Some of the interesting fields in web traffic logs that we should always look ou
 - path
 
 
-##### Hacker's IP
+##### 1. Hacker's IP
 High-frequency IPs with unusual user agents are often the attacker.
 And to find the most active IPs we can use the following SPL query in Splunk:
 
@@ -71,7 +71,7 @@ index=main sourcetype=web_traffic
 
 
 
-##### User Agents
+##### 2. User Agents
 
 High-frequency IPs with unusual user agents are often the attacker.
 
@@ -83,8 +83,8 @@ index=main sourcetype=web_traffic
 {% include elements/figure.html image="/assets/images/aoc3/ua.png" caption='Client IP' %}
 
 
-##### Path
-The third field we will examine is path, which contains the URL being requested and accessed by the client IPs. The results shown below clearly indicate some attacks worth investigating.
+##### 3. Path
+The third field we will examine is path, which contains the URL being requested and accessed by the client IPs. The results shown below clearly indicate some path worth investigating.
 
 {% include elements/figure.html image="/assets/images/aoc3/path.png" caption='Path' %}
 
