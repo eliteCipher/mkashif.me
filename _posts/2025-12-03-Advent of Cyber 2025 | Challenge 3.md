@@ -54,6 +54,7 @@ Some of the interesting fields in web traffic logs that we should always look ou
 - user_agent
 - path
 
+<br> <br>
 
 ##### 1. Hacker's IP
 High-frequency IPs with unusual user agents are often the attacker.
@@ -67,7 +68,6 @@ index=main sourcetype=web_traffic
 {% endhighlight %}
 
 {% include elements/figure.html image="/assets/images/aoc3/ip.png" caption='Client IP' %}
-
 
 
 
@@ -93,6 +93,8 @@ The third field we will examine is path, which contains the URL being requested 
 
 #### Tracing the Attack Chain
 
+<br> <br>
+
 ##### Reconnaissance (Footprinting)
 
 Every attack starts quietly.
@@ -106,6 +108,8 @@ sourcetype=web_traffic client_ip="<Attacker_IP>" AND path IN ("/.env", "/*phpinf
 {% endhighlight %}
 
 
+<br> <br>
+
 ##### Enumeration (Vulnerability Testing)
 
 Once the server responds, the attacker escalates to testing for weaknesses such as path traversal and open redirect vulnerabilities.
@@ -116,6 +120,8 @@ We can search for traversal and redirect payloads with this SPL query:
 sourcetype=web_traffic client_ip="<Attacker_IP>" AND path="*..\/..\/*" OR path="*redirect*" | stats count by path
 {% endhighlight %}
 
+
+<br> <br>
 
 ##### SQL Injection Attacks
 
@@ -139,6 +145,8 @@ sourcetype=web_traffic client_ip="<Attacker_IP>" AND path IN ("*backup.zip*", "*
 {% endhighlight %}
 
 
+<br> <br>
+
 ##### Ransomware Staging & Remote Code Execution (RCE)
 
 To observe suspicious requests involving a webshell and a ransomware-like binary.
@@ -148,6 +156,7 @@ we can use following SPL query:
 sourcetype=web_traffic client_ip="<Attacker_IP>" AND path IN ("*bunnylock.bin*", "*shell.php?cmd=*") | table _time, path, user_agent, status
 {% endhighlight %}
 
+<br> <br>
 
 ##### Correlating Outbound C2 Communication
 
@@ -160,6 +169,7 @@ Using the compromised server IP as the source and the attacker IP as the destina
 sourcetype=firewall_logs src_ip="<Victim_IP>" AND dest_ip="<Attacker_IP>" AND action="ALLOWED" | stats sum(bytes_transferred) by src_ip
 {% endhighlight %}
 
+<br> <br>
 ---
 
 #### Conclusion
