@@ -54,7 +54,7 @@ Some of the interesting fields in web traffic logs that we should always look ou
 - user_agent
 - path
 
-<br> <br>
+<br>
 
 ##### 1. Hacker's IP
 High-frequency IPs with unusual user agents are often the attacker.
@@ -93,7 +93,6 @@ The third field we will examine is path, which contains the URL being requested 
 
 #### Tracing the Attack Chain
 
-<br> <br>
 
 ##### Reconnaissance (Footprinting)
 
@@ -107,8 +106,7 @@ We should begin by searching for requests targeting common high-value paths:
 sourcetype=web_traffic client_ip="<Attacker_IP>" AND path IN ("/.env", "/*phpinfo*", "/.git*") | table _time, path, user_agent, status
 {% endhighlight %}
 
-
-<br> <br>
+<br>
 
 ##### Enumeration (Vulnerability Testing)
 
@@ -121,7 +119,7 @@ sourcetype=web_traffic client_ip="<Attacker_IP>" AND path="*..\/..\/*" OR path="
 {% endhighlight %}
 
 
-<br> <br>
+<br> 
 
 ##### SQL Injection Attacks
 
@@ -133,6 +131,7 @@ We should start looking for automated SQL injection tools by searching for their
 sourcetype=web_traffic client_ip="<Attacker_IP>" AND user_agent IN ("*sqlmap*", "*Havij*") | table _time, path, status
 {% endhighlight %}
 
+ <br>
 
 ##### Exfiltration Attempts
 
@@ -145,7 +144,7 @@ sourcetype=web_traffic client_ip="<Attacker_IP>" AND path IN ("*backup.zip*", "*
 {% endhighlight %}
 
 
-<br> <br>
+<br> 
 
 ##### Ransomware Staging & Remote Code Execution (RCE)
 
@@ -156,7 +155,7 @@ we can use following SPL query:
 sourcetype=web_traffic client_ip="<Attacker_IP>" AND path IN ("*bunnylock.bin*", "*shell.php?cmd=*") | table _time, path, user_agent, status
 {% endhighlight %}
 
-<br> <br>
+<br> 
 
 ##### Correlating Outbound C2 Communication
 
@@ -169,7 +168,8 @@ Using the compromised server IP as the source and the attacker IP as the destina
 sourcetype=firewall_logs src_ip="<Victim_IP>" AND dest_ip="<Attacker_IP>" AND action="ALLOWED" | stats sum(bytes_transferred) by src_ip
 {% endhighlight %}
 
-<br> <br>
+<br>
+
 ---
 
 #### Conclusion
