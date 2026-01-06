@@ -4,11 +4,8 @@ title: "A Body Wearable Antenna for Online Real-Time Health Monitoring System"
 authors: "Mohd Kashif, Zeeshan Ali Haq"
 year: 2018
 venue: "International Journal of Engineering Research in Computer Science and Engineering (IJERCSE), Vol. 5, Issue 2"
-# No DOI listed in the paper, so we leave doi empty
-doi: ""
-# Put the PDF in your repo and update this path:
-pdf: "/assets/papers/kashif2018-body-wearable-antenna.pdf"
-url_external: ""
+
+url_external: "https://www.technoarete.org/common_abstract/pdf/IJERCSE/v5/i2/Ext_25307.pdf"
 note: ""
 ---
 
